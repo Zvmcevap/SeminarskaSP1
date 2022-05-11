@@ -2,7 +2,6 @@
 
 ## Kaj je načeloma ideja moje seminarske
 
-***
 
 #### TL;DR:
 
@@ -29,9 +28,6 @@ prišel na idejo, da bi se najbolje naučil z ustvaritvijo nečesa interaktivneg
 Python FastApi bo za back-end, ker mi *izgleda* lightweight, in nisem še nič naredil z njim, tako da ga lahko tukaj malo
 stestiram. (Bo pa samo za serviranje preprostih datotek, ne bo nobene baze podatkov, piškotov, itd.
 
-
-
-***
 
 ## Zemljevid Poti
 

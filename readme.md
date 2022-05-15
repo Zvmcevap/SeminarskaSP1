@@ -33,7 +33,7 @@ stestiram. (Bo pa samo za serviranje preprostih datotek, ne bo nobene baze podat
 
 * [X] **Osnovno okolje** – Postavitev datotečne strukture, Python okolja, index.html, itd.
 * [ ] **Osnovni 'layout' strani** – Postavitev menija, gumbov, erm šahovnice? (ne da se mi guglat "grid" (niti "layout")
-  , kakšni izrazi bodo v angleščini zaenkrat.)
+  , kakšni izrazi bodo v angleščini zaenkrat.). Postavitev bo identična igri Wordle.
 * [ ] **Generiranje poti po labirintu** – Vsaj upam, da mi uspe spisati samodejno-ustvarjanje naključne poti po
   labirintu.
 * [ ] **Sprožilec za kviz** – Ustvari 3 kviz polja v labirintu in jih sproži ko uporabnik stopi na njih.

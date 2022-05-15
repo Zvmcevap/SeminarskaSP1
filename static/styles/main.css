@@ -1,0 +1,70 @@
+:root {
+    --main-bg-colour: white;
+    --main-txt-colour: #282828;
+    --hue: 120;
+    --saturation: 50%;
+    --lightness-offset: 0%;
+    --lightness: 40%;
+    --numberOfColumns : 7;
+    --numberOfRows: 7;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1em;
+
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+    background: var(--main-bg-colour);
+    color: var(--main-txt-colour);
+}
+
+.naslov {
+    display: flex;
+    justify-content: center;
+}
+
+.labirint {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+    grid-template-columns: repeat(var(--numberOfColumns), 2em);
+    grid-template-rows: repeat(var(--numberOfRows), 2em);
+    margin-bottom: 1em;
+}
+
+.polje {
+    color: var(--main-bg-colour);
+    background: hsl(
+            var(--hue, 120),
+            var(--saturation, 1%),
+            calc(var(--lightness-offset, 0%) + var(--lightness, 10%))
+    );
+    border: .1em solid #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.polje:hover {
+    --lightness-offset: 20%;
+}
+
+.polje[data-state="path"] {
+    --hue: 200;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}

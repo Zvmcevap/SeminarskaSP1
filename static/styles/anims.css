@@ -1,0 +1,128 @@
+body {
+    --nav-load-time: 300ms;
+    --nav-link-load-time: 500ms;
+    --article-load-delay: calc(var(--nav-load-time) + var(--nav-link-load-time));
+    --button-load-time: 500ms;
+}
+
+
+.move-left {
+    animation: moveleft ease-in-out var(--button-load-time);
+    animation-fill-mode: forwards;
+}
+
+.return-left {
+    animation: returnleft ease-in-out var(--button-load-time);
+    animation-fill-mode: forwards;
+}
+
+.move-right {
+    animation: moveright ease-in-out var(--button-load-time);
+    animation-fill-mode: forwards;
+}
+
+.return-right {
+    transform: translateX(200vw);
+    animation: returnright ease-in-out var(--button-load-time);
+    animation-fill-mode: forwards;
+
+}
+
+.dance {
+    animation: dance-up-down infinite 1s;
+}
+
+@keyframes returnright {
+    0% {
+        visibility: hidden;
+        position: absolute;
+    }
+    50% {
+        transform: translateX(-5vw);
+    }
+
+    100% {
+        transform: translateX(0%);
+        position: center;
+        visibility: visible;
+    }
+}
+
+
+@keyframes moveright {
+    0% {
+        transform: translateX(0%);
+        visibility: visible;
+        position: center;
+    }
+    50% {
+        transform: translateX(-5vw);
+    }
+
+    100% {
+        transform: translateX(200vw);
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+@keyframes moveleft {
+    0% {
+        transform: translateX(0%);
+        visibility: visible;
+        position: center;
+    }
+    50% {
+        transform: translateX(5vw);
+    }
+
+    100% {
+        transform: translateX(-200vw);
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+@keyframes returnleft {
+    0% {
+        transform: translateX(-200vw);
+        visibility: hidden;
+        position: absolute;
+    }
+    50% {
+        transform: translateX(5vw);
+    }
+
+    100% {
+        transform: translateX(0%);
+        position: center;
+        visibility: visible;
+    }
+}
+
+
+@keyframes dance-up-down {
+    20% {
+        transform: translateY(-50%);
+    }
+
+    40% {
+        transform: translateY(5%);
+    }
+
+    60% {
+        transform: translateY(-25%);
+    }
+
+    80% {
+        transform: translateY(2.5%);
+    }
+
+    90% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

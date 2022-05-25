@@ -4,34 +4,30 @@ import {move, checkDirection} from "./move.js";
 export function makePath(labirint, movesAvailable, visited, currentPolje) {
 
     let directions = getThreeDirections(currentPolje)
-
-    console.log("movesAvailable: " + movesAvailable + " - visited.length: " + visited.length)
     let movesLeft = movesAvailable - visited.length;
-
     let nextPolje = null;
 
     // Get available directions
     shuffleArray(directions);
-    console.log('shuffled directions. ' + directions)
 
     for (let i = 0; i < directions.length; i++) {
         let direction = directions[i];
         if (checkDirection(labirint, currentPolje, direction, movesLeft, visited)) {
             nextPolje = move(labirint, currentPolje, direction, true)
             visited.push(nextPolje);
-            console.log("Pushed one in: " + visited)
             makePath(labirint, movesAvailable, visited, nextPolje);
         }
+        movesLeft = movesAvailable - visited.length;
+        if (movesLeft === -1) {
+            return visited;
+        }
     }
-    movesLeft = movesAvailable - visited.length;
-    if (movesLeft === -1) {
-        return visited;
-    }
+
     currentPolje.setPath(false);
     visited.pop();
 
 
-    /* Relic from an age where I didn't solve it with recursion!
+    /* Relic from an age where I didn't solve it with recursion... it didn't work well...
 
         for (let i = 0; i <= pathLength; i++) {
             let randomInt = getRandomInt(0, 4);
@@ -63,7 +59,6 @@ export function makePath(labirint, movesAvailable, visited, currentPolje) {
             }
         }
         return visited
-
      */
 }
 

@@ -1,5 +1,6 @@
 import {makeGrid} from "./createLab.js"
 import {makePath, getStartingPolje} from "./makePath.js"
+import {fromPlayToMoveButtons, fromMoveToPlayButtons} from "./buttons.js"
 
 let visited = [];
 const gridSize = 7;
@@ -7,8 +8,14 @@ const labirint = document.getElementById("labirint")
 const poljaArray = makeGrid(gridSize);
 gridCSSSize(gridSize, labirint)
 
-const resetButton = document.getElementById('reset')
-resetButton.addEventListener('click', reset)
+const playButton = document.getElementById("play-button")
+playButton.addEventListener('click', play)
+
+const oneButtonDiv = document.getElementById("buttonsDiv-oneButton")
+
+const moveButtonsDiv = document.getElementById("move-buttons")
+const earButton = document.getElementById("ear-button")
+earButton.addEventListener("click", death)
 
 for (let i = 0; i < poljaArray.length; i++) {
     for (let l = 0; l < poljaArray[i].length; l++) {
@@ -21,14 +28,25 @@ function gridCSSSize(gridSize, labirint) {
     labirint.style.setProperty('--numberOfRows', gridSize)
 }
 
-function reset() {
+function play() {
     for (const polje of visited) {
         polje.setPath(false);
+        polje.goTo = "";
+        polje.comeFrom = "";
+        polje.div.innerHTML = polje.stepsFromWin;
     }
     let start = getStartingPolje(poljaArray)
     visited = [start];
 
-    visited = makePath(poljaArray, 10, visited, getStartingPolje(poljaArray));
-    console.log("Reset finished")
-    console.log(visited)
+    visited = makePath(poljaArray, 14, visited, getStartingPolje(poljaArray));
+
+    for(const polje of visited) {
+        polje.div.innerHTML = polje.goTo;
+    }
+
+    fromPlayToMoveButtons(oneButtonDiv, moveButtonsDiv);
+}
+
+function death() {
+    fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv);
 }

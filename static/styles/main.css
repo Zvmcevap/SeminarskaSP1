@@ -5,7 +5,7 @@
     --saturation: 50%;
     --lightness-offset: 0%;
     --lightness: 40%;
-    --numberOfColumns : 7;
+    --numberOfColumns: 7;
     --numberOfRows: 7;
 }
 
@@ -16,30 +16,37 @@
     font-family: Arial, sans-serif;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1em;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 1em;
 
-    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+    font-size: clamp(0.5rem, 2.5vmin, 2.5rem);
     background: var(--main-bg-colour);
     color: var(--main-txt-colour);
+    overflow: hidden;
 }
 
 .naslov {
     display: flex;
     justify-content: center;
+    margin-bottom: 0.5em;
 }
 
 .labirint {
     display: grid;
     justify-content: center;
     align-content: center;
-    flex-grow: 1;
-    grid-template-columns: repeat(var(--numberOfColumns), 2em);
-    grid-template-rows: repeat(var(--numberOfRows), 2em);
-    margin-bottom: 1em;
+    grid-template-columns: repeat(var(--numberOfColumns), 3em);
+    grid-template-rows: repeat(var(--numberOfRows), 3em);
 }
 
 .polje {
@@ -53,6 +60,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 250ms linear;
 }
 
 .polje:hover {
@@ -61,10 +69,4 @@ body {
 
 .polje[data-state="path"] {
     --hue: 200;
-}
-.buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
 }

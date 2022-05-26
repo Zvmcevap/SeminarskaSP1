@@ -1,0 +1,48 @@
+
+.pelikani-levo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(-50vw);
+}
+
+.pelikani-desno {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(50vw);
+}
+
+.pelikani-levo.priletijo {
+    animation: load-from-left 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.pelikani-levo.odletijo {
+    animation: moveleft 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.pelikani-desno.priletijo {
+    animation: load-from-right 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.pelikani-desno.odletijo {
+    animation: moveright 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+.pelikan-levo {
+    transform: scaleX(-1);
+    margin-top: 1em;
+    height: 9em;
+}
+
+.pelikan-desno {
+    margin-top: 1em;
+    height: 9em;
+}

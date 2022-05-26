@@ -60,11 +60,7 @@ export function move(lab, polje, direction, makepath) {
     }
     if (makepath) {
         polje.goTo = direction;
-        console.log("GoTo = " + direction)
-        console.log(polje)
         nextPolje.comeFrom = comeFrom;
-        console.log("ComeFrom = " + comeFrom)
-        console.log(nextPolje)
         nextPolje.setPath(true);
     }
     return nextPolje;

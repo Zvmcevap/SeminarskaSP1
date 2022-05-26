@@ -6,7 +6,6 @@
 }
 
 .buttons {
-    background: blueviolet;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +29,9 @@ button.add {
     border-right: 0.6rem solid #303030;
     border-bottom: 0.6rem solid #505050;
     cursor: pointer;
+    box-shadow: 0.4em 0.2em .3em .4em rgba(0, 0, 0, 0.5);
 }
+
 .button:active {
     border: 1px;
 }
@@ -89,4 +90,29 @@ button.add {
 .button.down {
     grid-row: 3;
     grid-column: 2;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1em;
+    background: var(--main-bg-colour);
+    fill: #14213d;
+    color: #14213d;
+    border: .1em solid #14213d;
+    box-shadow: .05em .05em .2em black;
+    cursor: pointer;
+}
+
+.info:hover {
+    box-shadow: 0 0 0;
+    animation: slow-up-down linear infinite 1s;
+}
+
+.info-svg {
+    width: 1em;
+    height: 1em;
 }

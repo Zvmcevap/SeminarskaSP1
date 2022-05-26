@@ -31,6 +31,7 @@ body {
 .dance-infinite {
     animation: dance-up-down infinite 1s;
 }
+
 .dance-once {
     animation: dance-up-down linear 1s;
 }
@@ -130,9 +131,22 @@ body {
     }
 }
 
+@keyframes slow-up-down {
+    25% {
+        transform: translateY(-10%);
+    }
+    75% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
 @keyframes top-menu-move-up {
     0% {
-        transform: translateY(50vh);
+        transform: translateY(10vh);
     }
     70% {
         transform: translateY(-3vh);
@@ -140,6 +154,19 @@ body {
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes top-menu-move-down {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-3vh);
+    }
+
+    100% {
+        transform: translateY(10vh);
     }
 }
 
@@ -167,3 +194,50 @@ body {
     }
 }
 
+@keyframes remove-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-150%);
+    }
+}
+
+@keyframes move-back-down {
+    0% {
+        transform: translateY(-150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.remove-up {
+    animation: remove-up linear 300ms;
+    animation-fill-mode: forwards;
+}
+
+.return-down {
+    animation: move-back-down linear 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes return-down-with-jump {
+    0% {
+        transform: translateY(-100vh);
+    }
+    50% {
+        transform: translateY(5vh);
+    }
+    70% {
+        transform: translateY(-5vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.come-into-from-top {
+    animation: return-down-with-jump linear 1s;
+}

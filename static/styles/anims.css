@@ -28,8 +28,11 @@ body {
 
 }
 
-.dance {
+.dance-infinite {
     animation: dance-up-down infinite 1s;
+}
+.dance-once {
+    animation: dance-up-down linear 1s;
 }
 
 @keyframes returnright {
@@ -126,3 +129,41 @@ body {
         transform: translateY(0);
     }
 }
+
+@keyframes top-menu-move-up {
+    0% {
+        transform: translateY(50vh);
+    }
+    70% {
+        transform: translateY(-3vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes load-from-left {
+    0% {
+        transform: translateX(-500vw);
+    }
+    80% {
+        transform: translateX(5vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes load-from-right {
+    0% {
+        transform: translateX(500vw);
+    }
+    80% {
+        transform: translateX(-5vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+

@@ -21,6 +21,7 @@
     flex-direction: column;
     min-height: 100vh;
     padding: 1em;
+
 }
 
 body {
@@ -56,7 +57,7 @@ body {
             var(--saturation, 1%),
             calc(var(--lightness-offset, 0%) + var(--lightness, 10%))
     );
-    border: .1em solid #282828;
+    /*   border: .2em solid #282828; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,4 +70,165 @@ body {
 
 .polje[data-state="path"] {
     --hue: 200;
+}
+
+.polje.border-left {
+    border-left: .2em solid #282828;
+}
+
+.polje.border-right {
+    border-right: .2em solid #282828;
+}
+
+.polje.border-bottom {
+    border-bottom: .2em solid #282828;
+}
+
+.polje.border-top {
+    border-top: .2em solid #282828;
+}
+
+.border-radius-top-left {
+    border-radius: 1em 0 0 0;
+}
+
+.border-radius-top-right {
+    border-radius: 0 1em 0 0;
+}
+
+.border-radius-bot-left {
+    border-radius: 0 0 0 1em;
+}
+
+.border-radius-bot-right {
+    border-radius: 0 0 1em 0;
+}
+
+.treasure {
+    display: flex;
+    width: 3em;
+    height: 3em;
+    border-width: .2em .2em 0;
+    border-style: solid;
+    border-radius: 0.5em 0.5em 0 0;
+    grid-column: 4;
+    cursor: pointer;
+}
+
+.usesa {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.banane {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.banana {
+    margin: 0.1em;
+    transform: translateY(20vh);
+}
+
+.uses {
+    color: #14213d;
+    fill: #14213d;
+    background: white;
+    border: .1em solid #14213d;
+    border-radius: 1em;
+    margin: 0.1em;
+    transform: translateY(20vh);
+}
+.move-up {
+    animation: top-menu-move-up ease-in-out 1s;
+    animation-fill-mode: forwards;
+}
+
+#uses-svg {
+    width: 1em;
+    height: 1em;
+    margin: 0.2em;
+}
+
+.player-start {
+    display: flex;
+    width: 3.2em;
+    height: 3.2em;
+    border-width: 0 .2em .2em;
+    border-style: solid;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--numberOfColumns), 3em);
+    z-index: -5;
+}
+
+.treasure-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%; /* or any custom size */
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5em;
+}
+
+.sredina {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.pelikani-levo {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(-50vw);
+}
+.pelikani-levo.priletijo {
+    animation: load-from-left 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.pelikani-levo.odletijo {
+    animation: load-from-left 1s ease-in-out reverse;
+    animation-fill-mode: forwards;
+}
+.pelikani-desno.priletijo {
+    animation: load-from-right 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.pelikani-desno.odletijo {
+    animation: load-from-right 1s ease-in-out reverse;
+    animation-fill-mode: forwards;
+}
+
+.pelikani-desno {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(50vw);
+}
+
+.pelikan-levo {
+    transform: scaleX(-1);
+}
+
+.pelikan-desno {
+
 }

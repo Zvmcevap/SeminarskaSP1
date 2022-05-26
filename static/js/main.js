@@ -17,6 +17,15 @@ const moveButtonsDiv = document.getElementById("move-buttons")
 const earButton = document.getElementById("ear-button")
 earButton.addEventListener("click", death)
 
+const pelikaniLevo = document.getElementById("pelikani-levo")
+const pelikaniDesno = document.getElementById("pelikani-desno")
+
+const uses1 = document.getElementById("uses1")
+const uses2 = document.getElementById("uses2")
+const uses3 = document.getElementById("uses3")
+
+const usesa = [uses1, uses2, uses3]
+
 for (let i = 0; i < poljaArray.length; i++) {
     for (let l = 0; l < poljaArray[i].length; l++) {
         labirint.appendChild(poljaArray[i][l].div);
@@ -45,8 +54,20 @@ function play() {
     }
 
     fromPlayToMoveButtons(oneButtonDiv, moveButtonsDiv);
+    pelikaniDesno.style.display = "flex"
+    pelikaniLevo.style.display = "flex"
+
+    for (let i = 0; i < usesa.length; i++) {
+        setTimeout(narisiElementNadLabirintom, 100*i, usesa[i])
+    }
+
+
 }
 
 function death() {
     fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv);
+}
+
+function narisiElementNadLabirintom(element) {
+    element.classList.add("move-up")
 }

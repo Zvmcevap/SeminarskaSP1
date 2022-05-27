@@ -17,12 +17,6 @@
 <body>
 <div class="main">
     <h1 class="naslov">Title Pending Inspiration</h1>
-    <div class="info come-into-from-top" id="info-button">
-        <svg class="info-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
-            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path d="M160 448h-32V224c0-17.69-14.33-32-32-32L32 192c-17.67 0-32 14.31-32 32s14.33 31.1 32 31.1h32v192H32c-17.67 0-32 14.31-32 32s14.33 32 32 32h128c17.67 0 32-14.31 32-32S177.7 448 160 448zM96 128c26.51 0 48-21.49 48-48S122.5 32.01 96 32.01s-48 21.49-48 48S69.49 128 96 128z"/>
-        </svg>
-    </div>
     <div class="pomoc-sredini">
         <div class="treasure-position">
             <div class="top-grid">
@@ -63,9 +57,16 @@
                         <img src="./images/banana.png">
                     </div>
                 </div>
+                <div class="info come-into-from-top" id="info-button">
+                    <svg class="info-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M160 448h-32V224c0-17.69-14.33-32-32-32L32 192c-17.67 0-32 14.31-32 32s14.33 31.1 32 31.1h32v192H32c-17.67 0-32 14.31-32 32s14.33 32 32 32h128c17.67 0 32-14.31 32-32S177.7 448 160 448zM96 128c26.51 0 48-21.49 48-48S122.5 32.01 96 32.01s-48 21.49-48 48S69.49 128 96 128z"/>
+                    </svg>
+                </div>
             </div>
         </div>
         <div class="sredina">
+            <div class="navodila" id="death-screen"></div>
             <div class="navodila return-down" id="navodila">
                 <h3>WELCOME "FRIENDS"!</h3>
                 <p>To the most <b>exlusive</b> erm <i>"game"</i> you'll ever be able to play!</p>
@@ -76,15 +77,15 @@
                 <ul>
                     <li>Start the game by pressing the big round <b>PLAY</b> button bellow.</li>
                     <li>Use the movement buttons that show up after or</li>
-                    <li><b>Q V P M</b> keyboard keys to move <b>RIGHT UP DOWN</b> and <b>LEFT</b> respectfully. <sub>I
+                    <li><b>Q V P M</b> keyboard keys to move <b>RIGHT UP LEFT</b> and <b>DOWN</b> respectfully. <sub>I
                         ain't joking here lol</sub></li>
                     <li><b>AUDIO QUEUES</b> will inform you which direction to move into!</li>
                     <li>The <b>EAR BUTTON</b> in the center will repeat the direction tip. But you have <b>ONLY 3</b>!
-                    </li>
+                    <sub>That's still one ear more than most humans!</sub></li>
                     <li>Solve the three <b>RIDDLES</b> when prompted, to progress</li>
                     <li>But riddles come with <b>REWARDS</b>! Choose wisely!</li>
                     <li>Get to the end to recieve your <b class="special">SPECIAL PRIZE!!!</b></li>
-                    <li>Should you forget click on the <b>TREASURE CHEST</b> above to open and close this menu</li>
+                    <li>Should you forget click on the <b>INFO</b> above to open and close this menu</li>
                     <li>And most importantly, remember to <b>HAVE FUN!</b></li>
                     <li></li>
                     <li></li>
@@ -96,7 +97,7 @@
                 <h4>Why???</h4>
                 <p>Why make this? I saw a <a href="https://www.youtube.com/watch?v=ugyxX7BWSMg" target="_blank">
                     random asshole on YouTube</a>build something very similar to this in Godot, it made me laugh so I
-                    thought I'll steal the idea, claim it as my own and never mention that to anyone.</p>
+                    thought I'd steal the idea, claim it as my own and never mention that to anyone.</p>
                 <h4>ANYWAY</h4>
                 <p>Thank you for checking this game out, for more nonsense have a visit to the links bellow.</p>
                 <p>The links I mentioned above:
@@ -119,8 +120,8 @@
             </div>
         </div>
         <div class="treasure-position">
-            <div class="player-start">
-                <img src="./images/player_f.png" alt="nevem">
+            <div class="player-start" id="player-start">
+                <img src="./images/player_f.png" id="player-img" alt="nevem">
             </div>
         </div>
     </div>
@@ -134,31 +135,31 @@
             </button>
         </div>
         <div class="movement-buttons" id="move-buttons">
-            <button class="button movement up">
+            <button class="button movement up" id="move-up">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
                 </svg>
             </button>
-            <button class="button movement left">
+            <button class="button movement left hide-down" id="move-left">
                 <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
                 </svg>
             </button>
-            <button class="button movement center" id="ear-button">
+            <button class="button movement center hide-down" id="ear-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ear"
                      viewBox="0 0 16 16">
                     <path d="M8.5 1A4.5 4.5 0 0 0 4 5.5v7.047a2.453 2.453 0 0 0 4.75.861l.512-1.363a5.553 5.553 0 0 1 .816-1.46l2.008-2.581A4.34 4.34 0 0 0 8.66 1H8.5ZM3 5.5A5.5 5.5 0 0 1 8.5 0h.16a5.34 5.34 0 0 1 4.215 8.618l-2.008 2.581a4.555 4.555 0 0 0-.67 1.197l-.51 1.363A3.453 3.453 0 0 1 3 12.547V5.5ZM8.5 4A1.5 1.5 0 0 0 7 5.5v2.695c.112-.06.223-.123.332-.192.327-.208.577-.44.72-.727a.5.5 0 1 1 .895.448c-.256.513-.673.865-1.079 1.123A8.538 8.538 0 0 1 7 9.313V11.5a.5.5 0 0 1-1 0v-6a2.5 2.5 0 0 1 5 0V6a.5.5 0 0 1-1 0v-.5A1.5 1.5 0 0 0 8.5 4Z"/>
                 </svg>
             </button>
-            <button class="button movement right">
+            <button class="button movement right hide-down" id="move-right">
                 <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
                 </svg>
             </button>
-            <button class="button movement down">
+            <button class="button movement down hide-down" id="move-down">
                 <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>

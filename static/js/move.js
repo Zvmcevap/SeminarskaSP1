@@ -65,3 +65,7 @@ export function move(lab, polje, direction, makepath) {
     }
     return nextPolje;
 }
+
+export function moveUp(lab, polje) {
+
+}

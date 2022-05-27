@@ -41,7 +41,6 @@ class Polje {
         this.row = row;
         this.column = column;
         this.path = false;
-        this.player = false;
         this.comeFrom = "";
         this.goTo = "";
         this.stepsFromWin = this.row + Math.abs(center - this.column);
@@ -49,7 +48,6 @@ class Polje {
         this.div = document.createElement("div");
         this.div.classList.add("polje")
         this.div.setAttribute("id", "" + row + "" + column)
-        this.div.innerHTML = this.stepsFromWin;
     }
 
     setPath(bool) {

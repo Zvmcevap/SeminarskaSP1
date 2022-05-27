@@ -33,3 +33,33 @@ export function fromPlayToMoveButtons(playButton, moveButtonsDiv) {
 function setDisplayGrid(buttonDiv) {
     buttonDiv.style.display = "grid";
 }
+
+export function buttonBeepRed(button) {
+    button.style.fill = "red"
+}
+
+export function buttonBoopWhite(button) {
+    button.style.fill = "white"
+}
+
+export function returnMovementButtons(movementButtons) {
+    for (let i = 0; i < movementButtons.length; i++) {
+        setTimeout(returnMovementButton, 200*i, movementButtons[i])
+        setTimeout(removeClassMoveUp, 1000 + 200 *i, movementButtons[i])
+    }
+}
+
+export function hideMovementButtons(movementButtons) {
+    for (let button of movementButtons) {
+        button.classList.add("hide-down")
+    }
+}
+
+function removeClassMoveUp(div) {
+    div.classList.remove("move-up")
+}
+
+function returnMovementButton(button) {
+    button.classList.remove("hide-down")
+    button.classList.add("move-up")
+}

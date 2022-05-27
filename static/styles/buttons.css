@@ -29,11 +29,12 @@ button.add {
     border-right: 0.6rem solid #303030;
     border-bottom: 0.6rem solid #505050;
     cursor: pointer;
-    box-shadow: 0.4em 0.2em .3em .4em rgba(0, 0, 0, 0.5);
+    box-shadow: 0.2em 0.2em .15em .2em rgba(0, 0, 0, 0.5);
 }
 
 .button:active {
     border: 1px;
+    box-shadow: 0 0 0 0;
 }
 
 #play-button {
@@ -64,6 +65,7 @@ button.add {
 }
 
 .movement-buttons {
+    position: relative;
     display: none;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -92,6 +94,10 @@ button.add {
     grid-column: 2;
 }
 
+.button.hide-down {
+    transform: translateY(100vh);
+}
+
 .info {
     display: flex;
     justify-content: center;
@@ -105,6 +111,13 @@ button.add {
     border: .1em solid #14213d;
     box-shadow: .05em .05em .2em black;
     cursor: pointer;
+    position: absolute;
+    top: .75em;
+    right: 6.5em;
+}
+
+.info.left {
+    left: 6.5em;
 }
 
 .info:hover {

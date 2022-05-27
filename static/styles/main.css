@@ -87,10 +87,26 @@ body {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    padding: 2em 3em;
+    padding: 0 3em;
     box-shadow: 0.2em 0.2em 1em .4em rgba(0, 0, 0, 0.5);
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
+}
+#death-screen {
+    padding: 0;
+    transform: translateY(-150%);
+}
+#death-screen img {
+    margin: 0;
+    animation: text-appear linear 300ms 100ms;
+    max-height: 50%;
+}
+#death-screen h3 {
+    margin: 0;
+}
+.hug-bottom {
+    position: absolute;
+    bottom: 1em;
 }
 
 .navodila::-webkit-scrollbar {
@@ -98,21 +114,33 @@ body {
 }
 
 .navodila h3 {
-    margin-bottom: 2em;
+    opacity: 0;
+    margin: 1em 0;
+    animation: text-appear ease-out 300ms 1s;
+    animation-fill-mode: forwards;
 }
 
 .navodila h4 {
+    opacity: 0;
     margin-top: 1em;
+    animation: text-appear ease-out 300ms 1200ms;
+    animation-fill-mode: forwards;
 }
 
 .navodila li {
+    opacity: 0;
     margin: .3em;
     width: 100%;
     text-align: left;
+    animation: text-appear ease-out 300ms 1600ms;
+    animation-fill-mode: forwards;
 }
 
 .navodila p {
+    opacity: 0;
     margin: .3em;
+    animation: text-appear ease-out 300ms 1400ms;
+    animation-fill-mode: forwards;
 }
 
 .navodila sub {
@@ -199,7 +227,6 @@ body {
     grid-column: 4;
     cursor: pointer;
     box-shadow: 0.2em 0.2em 1em .4em rgba(0, 0, 0, 0.5);
-
 }
 
 .usesa {
@@ -209,7 +236,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    z-index: -1;
 }
 
 .banane {
@@ -219,7 +245,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    z-index: -1;
+    z-index: 0;
 }
 
 .banana {
@@ -235,6 +261,11 @@ body {
     border-radius: 1em;
     margin: 0.1em;
     transform: translateY(20vh);
+    cursor: pointer;
+}
+
+.uses:hover {
+    animation: slow-up-down linear infinite 1s;
 }
 
 .move-up {
@@ -257,19 +288,17 @@ body {
     display: flex;
     width: 3.2em;
     height: 3.2em;
-    border-width: 0 .2em .2em;
-    border-style: solid;
-    border-radius: 0 0 0.5em 0.5em;
-    box-shadow: 0.2em 0.2em 1em .4em rgba(0, 0, 0, 0.5);
 }
 
 .top-grid {
     display: grid;
     grid-template-columns: repeat(var(--numberOfColumns), 3em);
+    position: relative;
 }
 
 .treasure-position {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
 }
@@ -282,3 +311,11 @@ img {
     cursor: pointer;
 }
 
+img:hover {
+    animation: slow-up-down linear infinite 1s;
+}
+
+#player-img.dead {
+    transition: 200ms;
+    transform: rotate(180deg);
+}

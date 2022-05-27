@@ -1,8 +1,19 @@
-
 export class Player {
-    attempts = 0
-    wins = 0
-    deaths = 0
+    constructor(visited, playerImg) {
+        this.stevilkaPolja = 0
+        this.seznamPoti = visited
+        this.playerImg = playerImg
+    }
 
-    
+    setPlayerImgMale() {
+        this.playerImg.src = "./images/player_m.png"
+    }
+
+    setPlayerImgFemale() {
+        this.playerImg.src = "./images/player_f.png"
+    }
+
+    moveUp() {
+
+    }
 }
